@@ -15,8 +15,10 @@
 
             display: flex;
             align-items: center;
-            padding-left: 80px;
+            justify-content: center; /* خلى المحتوى في الوسط */
             font-family: Arial, sans-serif;
+            padding: 20px; /* بدل padding-left */
+            box-sizing: border-box;
         }
 
         .container {
@@ -33,13 +35,35 @@
         }
 
         .text {
-            margin-top: 40px;
-            margin-left: -300px; /* ← التيكست على الشمال */
             color: black;
         }
 
         .text h3 {
             margin: 0 0 10px;
+        }
+
+        /* ===== Responsive للهواتف ===== */
+        @media (max-width: 768px) {
+            body {
+                height: auto; /* يسمح للصفحة بالتمدد */
+                padding: 40px 20px; /* مسافة داخلية مناسبة */
+            }
+
+            .container {
+                flex-direction: column; /* يخلي الصورة فوق النص */
+                gap: 20px;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .text {
+                margin-left: 0; /* يلغي السالب */
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
